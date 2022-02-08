@@ -1,0 +1,90 @@
+/*
+Spacing system
+  2  /  4  / 8  / 12 / 16  / 24 / 32 / 48 / 64 / 80 / 96 / 128 px
+.125 / .25 / .5 /.75/ 1 / 1.5 /  2 /  3 /  4 /  5 /   6 /  8 rem
+*/
+
+/*
+Font size system
+10    / 12 /   14 / 16 /   18 /  20  /  24 /   30  /   36 /  44  /   52 /   62  /   74  /   86  / 98 px
+.625 / .75 / .875 / 1 / 1.125 / 1.25 / 1.5 / 1.875 / 2.25 / 2.75 / 3.25 / 3.875 / 4.625 / 5.375 / 6.125 rem
+*/
+
+// Responsive breakpoint
+
+$bp-tablet: 37.5em; // 600px
+$bp-desktop: 56.25em; // 900px
+
+html {
+    font-size: 0.875rem; // 14px
+
+    @media only screen and (min-width: $bp-tablet) {
+        font-size: 0.938rem; // 15px
+    }
+
+    @media only screen and (min-width: $bp-desktop) {
+        font-size: 1rem; // 16px
+    }
+}
+
+body {
+    --main-bg: hsl(222, 26%, 31%);
+    --secondary-bg: hsl(223, 31%, 20%);
+    --screen: hsl(224, 36%, 15%);
+    --main-key: hsl(30, 25%, 89%);
+    --main-key-shadow: hsl(28, 16%, 65%);
+    --secondary-key: hsl(225, 21%, 49%);
+    --secondary-key-shadow: hsl(224, 28%, 35%);
+    --tertiary-key: hsl(6, 63%, 50%);
+    --tertiary-key-shadow: hsl(6, 70%, 34%);
+    --main-text: hsl(221, 14%, 31%);
+    --secondary-text: hsl(0, 0, 100%);
+}
+
+body[data-theme="two"] {
+    --main-bg: hsl(0, 0%, 90%);
+    --secondary-bg: hsl(0, 5%, 81%);
+    --screen: hsl(0, 0%, 93%);
+    --main-key: hsl(45, 7%, 89%);
+    --main-key-shadow: hsl(35, 11%, 61%);
+    --secondary-key: hsl(185, 42%, 37%);
+    --secondary-key-shadow: hsl(185, 58%, 25%);
+    --tertiary-key: hsl(25, 98%, 40%);
+    --tertiary-key-shadow: hsl(25, 99%, 27%);
+    --main-text: hsl(60, 10%, 19%);
+    --secondary-text: hsl(0, 0, 100%);
+}
+
+body[data-theme="three"] {
+    --main-bg: hsl(268, 75%, 9%);
+    --secondary-bg: hsl(268, 71%, 12%);
+    --main-key: hsl(268, 47%, 21%);
+    --main-key-shadow: hsl(290, 70%, 36%);
+    --secondary-key: hsl(285, 91%, 52%);
+    --secondary-key-shadow: ;
+    --tertiary-key: hsl(176, 100%, 44%);
+    --tertiary-key-shadow: hsl(177, 92%, 70%);
+    --main-text: hsl(52, 100%, 62%);
+    --secondary-text: hsl(0, 0, 100%);
+}
+
+body {
+    font-family: "Spartan", sans-serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.attribution {
+    margin: 5rem 0;
+    font-size: 1rem;
+    color: var(--main-key);
+    text-align: center;
+
+    &__link {
+        color: var(--main-key-shadow);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
