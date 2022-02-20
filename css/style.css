@@ -13,12 +13,12 @@ html {
 }
 @media only screen and (min-width: 37.5em) {
   html {
-    font-size: 0.938rem;
+    font-size: 1rem;
   }
 }
 @media only screen and (min-width: 56.25em) {
   html {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -33,7 +33,7 @@ body {
   --tertiary-key: hsl(6, 63%, 50%);
   --tertiary-key-shadow: hsl(6, 70%, 34%);
   --main-text: hsl(221, 14%, 31%);
-  --secondary-text: hsl(0, 0, 100%);
+  --secondary-text: hsl(0, 0%, 100%);
 }
 
 body[data-theme=two] {
@@ -65,12 +65,27 @@ body[data-theme=three] {
 
 body {
   font-family: "Spartan", sans-serif;
-  font-size: 1.875rem;
+  font-size: 1.25rem;
   font-weight: 700;
+  background-color: var(--main-bg);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .attribution {
-  margin: 5rem 0;
+  margin-top: 5rem;
   font-size: 1rem;
   color: var(--main-key);
   text-align: center;
@@ -83,26 +98,19 @@ body {
 }
 
 /* Box sizing rules */
+/* Remove default margin and padding */
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -173,4 +181,100 @@ select {
   white-space: nowrap;
   /* added line */
   border: 0;
+}
+
+.btn {
+  background-color: var(--main-key-shadow);
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.btn--del, .btn--reset {
+  background-color: var(--secondary-key-shadow);
+}
+.btn--equals {
+  background-color: var(--tertiary-key-shadow);
+}
+.btn__front {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-key);
+  border-radius: 0.5rem;
+  font-size: inherit;
+  color: var(--main-text);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  -webkit-transition: -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1), -webkit-transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.btn__front--del, .btn__front--reset {
+  background-color: var(--secondary-key);
+  color: var(--secondary-text);
+}
+.btn__front--equals {
+  background-color: var(--tertiary-key);
+  color: var(--secondary-text);
+}
+.btn:hover .btn__front {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5), -webkit-transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+.btn:active .btn__front {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+
+.calc__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.calc__screen {
+  min-height: 5rem;
+  margin: 1.5rem 0;
+  background-color: var(--screen);
+  border-radius: 0.75rem;
+}
+.calc__grid {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-template-columns: repeat(4, 4rem);
+  grid-template-rows: minmax(4rem, auto) repeat(4, 4rem);
+  gap: 1rem;
+  background-color: var(--secondary-bg);
+  padding: 1.5rem;
+  padding-top: calc(1.5rem + 3px);
+  border-radius: 0.75rem;
+}
+.calc__span {
+  grid-column: span 2;
+}
+
+.switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }

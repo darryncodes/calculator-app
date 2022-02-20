@@ -1,0 +1,37 @@
+@use '../base/base' as *;
+
+.calc {
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__screen {
+    min-height: 5rem;
+    margin: 1.5rem 0;
+    background-color: var(--screen);
+    border-radius: 0.75rem;
+  }
+
+  &__grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 4rem);
+    grid-template-rows: minmax(4rem, auto) repeat(4, 4rem);
+    gap: 1rem;
+
+    background-color: var(--secondary-bg);
+    padding: 1.5rem;
+    padding-top: calc(1.5rem + 3px);
+    border-radius: 0.75rem;
+  }
+
+  &__span {
+    grid-column: span 2;
+  }
+}
+
+.switch {
+  display: flex;
+}
