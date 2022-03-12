@@ -2,6 +2,7 @@
 
 .calc {
   &__hero {
+    color: var(--main-text);
     display: flex;
     justify-content: space-between;
   }
@@ -32,7 +33,7 @@
   }
 
   &__display {
-    color: var(--secondary-text);
+    color: var(--main-text);
   }
 
   &__grid {
@@ -52,4 +53,8 @@
   &__span {
     grid-column: span 2;
   }
+}
+
+.three {
+  color: var(--main-text);
 }

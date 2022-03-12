@@ -37,7 +37,8 @@ body[data-theme='one'] {
   --secondary-key-shadow: hsl(224, 28%, 35%);
   --tertiary-key: hsl(6, 63%, 50%);
   --tertiary-key-shadow: hsl(6, 70%, 34%);
-  --main-text: hsl(221, 14%, 31%);
+  --main-text: hsl(0, 0%, 100%);
+  //   --main-text-2: hsl(221, 14%, 31%);
   --secondary-text: hsl(0, 0%, 100%);
 }
 
@@ -52,7 +53,7 @@ body[data-theme='two'] {
   --tertiary-key: hsl(25, 98%, 40%);
   --tertiary-key-shadow: hsl(25, 99%, 27%);
   --main-text: hsl(60, 10%, 19%);
-  --secondary-text: hsl(0, 0, 100%);
+  --secondary-text: hsl(0, 0%, 100%);
 }
 
 body[data-theme='three'] {
@@ -66,7 +67,7 @@ body[data-theme='three'] {
   --tertiary-key: hsl(176, 100%, 44%);
   --tertiary-key-shadow: hsl(177, 92%, 70%);
   --main-text: hsl(52, 100%, 62%);
-  --secondary-text: hsl(0, 0, 100%);
+  --secondary-text: hsl(0, 0%, 100%);
 }
 
 body {
@@ -74,6 +75,7 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   background-color: var(--main-bg);
+  color: hsl(221, 14%, 31%);
 
   min-height: 100vh;
   display: flex;
