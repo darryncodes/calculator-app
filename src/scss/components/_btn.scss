@@ -1,6 +1,8 @@
 @use '../base/base' as *;
 
 .btn {
+  color: var(--main-text);
+
   background-color: var(--main-key);
   border-radius: 0.5rem;
   border: none;
@@ -15,6 +17,7 @@
 
   &--del,
   &--reset {
+    color: var(--secondary-text);
     background-color: var(--secondary-key);
     box-shadow: 0 5px var(--secondary-key-shadow);
 
@@ -25,6 +28,7 @@
   }
 
   &--equals {
+    color: var(--secondary-text);
     background-color: var(--tertiary-key);
     box-shadow: 0 5px var(--tertiary-key-shadow);
 

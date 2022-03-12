@@ -27,7 +27,7 @@ html {
   }
 }
 
-body {
+body[data-theme='one'] {
   --main-bg: hsl(222, 26%, 31%);
   --secondary-bg: hsl(223, 31%, 20%);
   --screen: hsl(224, 36%, 15%);
@@ -58,10 +58,11 @@ body[data-theme='two'] {
 body[data-theme='three'] {
   --main-bg: hsl(268, 75%, 9%);
   --secondary-bg: hsl(268, 71%, 12%);
+  --screen: hsl(268, 71%, 12%);
   --main-key: hsl(268, 47%, 21%);
   --main-key-shadow: hsl(290, 70%, 36%);
-  --secondary-key: hsl(285, 91%, 52%);
-  --secondary-key-shadow: ;
+  --secondary-key: hsl(290, 70%, 36%);
+  --secondary-key-shadow: hsl(285, 91%, 52%);
   --tertiary-key: hsl(176, 100%, 44%);
   --tertiary-key-shadow: hsl(177, 92%, 70%);
   --main-text: hsl(52, 100%, 62%);
@@ -79,6 +80,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1.5rem;
 }
 
 .attribution {

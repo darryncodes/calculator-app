@@ -1,16 +1,38 @@
 @use '../base/base' as *;
 
 .calc {
-  &__heading {
+  &__hero {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__theme {
+    display: flex;
+    align-items: center;
+  }
+
+  &__heading {
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+    padding-top: 0.25rem;
   }
 
   &__screen {
     min-height: 5rem;
     margin: 1.5rem 0;
+    margin-top: 1rem;
     background-color: var(--screen);
     border-radius: 0.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1.5rem;
+  }
+
+  &__display {
+    color: var(--secondary-text);
   }
 
   &__grid {
@@ -30,8 +52,4 @@
   &__span {
     grid-column: span 2;
   }
-}
-
-.switch {
-  display: flex;
 }

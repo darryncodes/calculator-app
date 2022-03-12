@@ -1,0 +1,40 @@
+@use '../base/base' as *;
+
+.switch {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--secondary-bg);
+  width: 3rem;
+  padding: 0.25rem;
+  border-radius: 1.5rem;
+  position: relative;
+
+  &__numbers {
+    position: absolute;
+    top: -16px;
+    font-size: 0.625rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 3rem;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__input {
+    position: absolute;
+    transform: scale(0);
+  }
+
+  &__input:checked ~ &__btn {
+    background: var(--tertiary-key);
+  }
+}

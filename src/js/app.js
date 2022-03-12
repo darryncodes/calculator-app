@@ -1,45 +1,115 @@
-const btns = document.querySelectorAll('.btn');
-const equals = document.querySelector('.btn--equals');
-const del = document.querySelector('.btn--del');
-const reset = document.querySelector('.btn--reset');
+// THEME SWITCHER START
 
-let display = document.querySelector('.calc__result');
+const input = document.querySelectorAll('.switch__input');
+const inputOne = document.querySelector('#input-1');
+const inputTwo = document.querySelector('#input-2');
+const inputThree = document.querySelector('#input-3');
 
-let number = 0;
+function handleTheme() {
+  if (inputOne.checked === true) {
+    document.body.setAttribute('data-theme', 'one');
+  }
+  if (inputTwo.checked === true) {
+    document.body.setAttribute('data-theme', 'two');
+  }
+  if (inputThree.checked === true) {
+    document.body.setAttribute('data-theme', 'three');
+  }
+}
+
+input.forEach(btn => {
+  btn.addEventListener('click', handleTheme);
+});
+
+// THEME SWITCHER END
+
+// CALCULATOR START
+
+const numberButtons = document.querySelectorAll('[data-number]');
+const operationButtons = document.querySelectorAll('[data-operation]');
+const equalsButton = document.querySelector('[data-equals]');
+const deleteButton = document.querySelector('[data-delete]');
+const resetButton = document.querySelector('[data-reset]');
+let display = document.querySelector('.calc__display');
+
+let currentNumber = '';
+let previousNumber = '';
+let resultNumber = '';
 let operand = '';
+let decimalClicked = false;
 
-function handleCalculation(e) {
-  console.log(e.target.value);
-  if (e.target.value === '+') {
-    display.textContent = number + parseInt(display.value);
-  }
-  if (e.target.value === '-') {
-    display.textContent = number - parseInt(display.value);
-  }
-  if (e.target.value === '/') {
-    display.textContent = number / parseInt(display.value);
-  }
-  if (e.target.value === 'x') {
-    display.textContent = number * parseInt(display.value);
-  }
+function handleNumberPress(e) {
+  currentNumber = e.target.innerText;
+  previousNumber = display.textContent;
+
+  //   if (resultNumber) {
+  //     resultNumber = '';
+  //   } else {
+  //     if (currentNumber === '.') {
+  //       if (decimalClicked !== true) {
+  //         currentNumber = display.innerText + currentNumber;
+  //         decimalClicked = true;
+  //       } else {
+  //         currentNumber += currentNumber;
+  //       }
+  //     }
+  //   }
+  display.innerText = previousNumber.toString() + currentNumber.toString();
+
+  //   display.innerText = currentNumber;
+  console.log(currentNumber);
 }
-
-function handleEquals() {
-  //   handleCalculation();
+function handleOperationPress(e) {
+  if (!resultNumber) {
+    previousNumber = currentNumber;
+  } else {
+    previousNumber = resultNumber;
+  }
+  currentNumber = '';
+  decimalClicked = false;
+  operand = e.target.innerText;
+  resultNumber = '';
+  display.textContent = '';
 }
+function handleEqaulPress() {
+  //   decimalClicked = false;
+  previousNumber = parseInt(previousNumber);
+  currentNumber = parseInt(currentNumber);
 
+  if (operand === '+') {
+    resultNumber = previousNumber + currentNumber;
+  }
+  if (operand === '-') {
+    resultNumber = previousNumber - currentNumber;
+  }
+  if (operand === '/') {
+    resultNumber = previousNumber / currentNumber;
+  }
+  if (operand === 'x') {
+    resultNumber = previousNumber * currentNumber;
+  }
+
+  //   previousNumber = resultNumber;
+  display.textContent = resultNumber;
+}
+function handleDelete() {
+  display.innerText = display.textContent.toString().slice(0, -1);
+}
 function handleReset() {
+  currentNumber = '';
+  previousNumber = '';
+  resultNumber = '';
+  operand = undefined;
+  decimalClicked = false;
   display.textContent = '';
 }
 
-function handleDelete() {
-  display.toString().slice(0, -1);
-}
-
-btns.forEach(btn => {
-  btn.addEventListener('click', handleCalculation);
+numberButtons.forEach(btn => {
+  btn.addEventListener('click', handleNumberPress);
 });
-
-equals.addEventListener('click', handleEquals);
-del.addEventListener('click', handleDelete);
-reset.addEventListener('click', handleReset);
+operationButtons.forEach(btn => {
+  btn.addEventListener('click', handleOperationPress);
+});
+equalsButton.addEventListener('click', handleEqaulPress);
+deleteButton.addEventListener('click', handleDelete);
+resetButton.addEventListener('click', handleReset);
