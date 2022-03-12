@@ -1,14 +1,14 @@
 @use '../base/base' as *;
 
 .btn {
-  color: var(--main-text);
-
+  color: var(--main-text-2);
   background-color: var(--main-key);
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
   outline-offset: 4px;
   box-shadow: 0 5px var(--main-key-shadow);
+  padding-top: 5px;
 
   &:active {
     box-shadow: 0 2px var(--main-key-shadow);
@@ -20,6 +20,7 @@
     color: var(--secondary-text);
     background-color: var(--secondary-key);
     box-shadow: 0 5px var(--secondary-key-shadow);
+    text-transform: uppercase;
 
     &:active {
       box-shadow: 0 2px var(--secondary-key-shadow);

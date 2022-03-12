@@ -38,7 +38,7 @@ body[data-theme='one'] {
   --tertiary-key: hsl(6, 63%, 50%);
   --tertiary-key-shadow: hsl(6, 70%, 34%);
   --main-text: hsl(0, 0%, 100%);
-  //   --main-text-2: hsl(221, 14%, 31%);
+  --main-text-2: hsl(221, 14%, 31%);
   --secondary-text: hsl(0, 0%, 100%);
 }
 
@@ -53,6 +53,7 @@ body[data-theme='two'] {
   --tertiary-key: hsl(25, 98%, 40%);
   --tertiary-key-shadow: hsl(25, 99%, 27%);
   --main-text: hsl(60, 10%, 19%);
+  --main-text-2: hsl(60, 10%, 19%);
   --secondary-text: hsl(0, 0%, 100%);
 }
 
@@ -67,6 +68,7 @@ body[data-theme='three'] {
   --tertiary-key: hsl(176, 100%, 44%);
   --tertiary-key-shadow: hsl(177, 92%, 70%);
   --main-text: hsl(52, 100%, 62%);
+  --main-text-2: hsl(52, 100%, 62%);
   --secondary-text: hsl(0, 0%, 100%);
 }
 
@@ -87,12 +89,12 @@ body {
 
 .attribution {
   margin-top: 5rem;
-  font-size: 1rem;
-  color: var(--main-key);
+  font-size: 0.75rem;
+  color: var(--secondary-key);
   text-align: center;
 
   &__link {
-    color: var(--main-key-shadow);
+    color: var(--main-text);
 
     &:hover {
       text-decoration: none;
