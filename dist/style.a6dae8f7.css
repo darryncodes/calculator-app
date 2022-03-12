@@ -69,19 +69,10 @@ body {
   font-weight: 700;
   background-color: var(--main-bg);
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .attribution {
@@ -104,13 +95,11 @@ body {
 *::after {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -133,8 +122,7 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -161,12 +149,9 @@ select {
   *,
 *::before,
 *::after {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
-    -webkit-transition-duration: 0.01ms !important;
-            transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -189,45 +174,32 @@ select {
   border: none;
   cursor: pointer;
   outline-offset: 4px;
-  -webkit-box-shadow: 0 5px var(--main-key-shadow);
-          box-shadow: 0 5px var(--main-key-shadow);
+  box-shadow: 0 5px var(--main-key-shadow);
 }
 .btn:active {
-  -webkit-box-shadow: 0 2px var(--main-key-shadow);
-          box-shadow: 0 2px var(--main-key-shadow);
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
+  box-shadow: 0 2px var(--main-key-shadow);
+  transform: translateY(5px);
 }
 .btn--del, .btn--reset {
   background-color: var(--secondary-key);
-  -webkit-box-shadow: 0 5px var(--secondary-key-shadow);
-          box-shadow: 0 5px var(--secondary-key-shadow);
+  box-shadow: 0 5px var(--secondary-key-shadow);
 }
 .btn--del:active, .btn--reset:active {
-  -webkit-box-shadow: 0 2px var(--secondary-key-shadow);
-          box-shadow: 0 2px var(--secondary-key-shadow);
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
+  box-shadow: 0 2px var(--secondary-key-shadow);
+  transform: translateY(5px);
 }
 .btn--equals {
   background-color: var(--tertiary-key);
-  -webkit-box-shadow: 0 5px var(--tertiary-key-shadow);
-          box-shadow: 0 5px var(--tertiary-key-shadow);
+  box-shadow: 0 5px var(--tertiary-key-shadow);
 }
 .btn--equals:active {
-  -webkit-box-shadow: 0 2px var(--tertiary-key-shadow);
-          box-shadow: 0 2px var(--tertiary-key-shadow);
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
+  box-shadow: 0 2px var(--tertiary-key-shadow);
+  transform: translateY(5px);
 }
 
 .calc__heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 .calc__screen {
   min-height: 5rem;
@@ -237,11 +209,8 @@ select {
 }
 .calc__grid {
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   grid-template-columns: repeat(4, 4rem);
   grid-template-rows: minmax(4rem, auto) repeat(4, 4rem);
   gap: 1rem;
@@ -255,7 +224,7 @@ select {
 }
 
 .switch {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
+
+/*# sourceMappingURL=/style.a6dae8f7.css.map */
