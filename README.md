@@ -50,9 +50,9 @@ Users should be able to:
 
 ### What I learned
 
-I think this will be one of those project I will look back fondly on and know it was a big milestone.
+I think this will be one of those project I will look back on fondly and know it was a big milestone.
 
-The three major wins were learning how to work with parcel.js, use modules in JavaScript (albeit not leveraging their full power in this project) and last but not least understanding how to working with local storage.
+The three major wins were learning how to work with parcel.js, use modules in JavaScript (albeit not leveraging their full power in this project) and last but not least understanding how to work with local storage.
 
 I used my new knowledge to save the users theme preference so when they return it's just how they left it.
 
