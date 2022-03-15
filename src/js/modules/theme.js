@@ -40,6 +40,7 @@ export function checkTheme() {
     inputThree.checked = true;
   }
 }
+handleTheme();
 checkTheme();
 
 input.forEach(btn => {
