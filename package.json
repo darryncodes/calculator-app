@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html --public-url ./"
+    "build": "parcel build ./src/index.html --public-url ./",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,12 @@
   "bugs": {
     "url": "https://github.com/darryncodes/calculator-app/issues"
   },
-  "homepage": "https://github.com/darryncodes/calculator-app#readme",
+  "homepage": "https://darryncodes.github.io/calculator-app",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
     "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
