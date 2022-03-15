@@ -99,5 +99,10 @@ body {
     &:hover {
       text-decoration: none;
     }
+
+    &:focus {
+      outline: 3px solid var(--main-text);
+      border-radius: 0.125rem;
+    }
   }
 }
