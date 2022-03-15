@@ -3,79 +3,83 @@ const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
 const deleteButton = document.querySelector('[data-delete]');
 const resetButton = document.querySelector('[data-reset]');
-let display = document.querySelector('.calc__display');
+const previousNumberElement = document.querySelector('.calc__previous');
+const currentNumberElement = document.querySelector('.calc__current');
 
-let currentNumber = '';
 let previousNumber = '';
-let resultNumber = '';
+let currentNumber = '';
 let operand = '';
-let decimalClicked = false;
 
-export function handleNumberPress(e) {
-  currentNumber = e.target.innerText;
-  previousNumber = display.textContent;
-
-  //   if (resultNumber) {
-  //     resultNumber = '';
-  //   } else {
-  //     if (currentNumber === '.') {
-  //       if (decimalClicked !== true) {
-  //         currentNumber = display.innerText + currentNumber;
-  //         decimalClicked = true;
-  //       } else {
-  //         currentNumber += currentNumber;
-  //       }
-  //     }
-  //   }
-  display.innerText = previousNumber.toString() + currentNumber.toString();
-
-  //   display.innerText = currentNumber;
-  console.log(currentNumber);
-}
-export function handleOperationPress(e) {
-  if (!resultNumber) {
-    previousNumber = currentNumber;
-  } else {
-    previousNumber = resultNumber;
-  }
+// RESET
+export function handleReset() {
+  previousNumber = '';
   currentNumber = '';
-  decimalClicked = false;
-  operand = e.target.innerText;
-  resultNumber = '';
-  display.textContent = '';
+  operand = '';
+  updateDisplay();
 }
+
+// DELETE
+export function handleDelete() {
+  currentNumber = currentNumber.toString().slice(0, -1);
+  updateDisplay();
+}
+
+// APPEND NUMBER
+export function handleNumberPress(e) {
+  let previousDisplayNumber = currentNumberElement.textContent;
+  let currentDisplayNumber = e.target.innerText;
+
+  if (currentDisplayNumber === '.' && currentNumber.includes('.')) return;
+  currentNumber =
+    previousDisplayNumber.toString() + currentDisplayNumber.toString();
+  updateDisplay();
+}
+
+// CHOOSE OPERATION
+export function handleOperationPress(e) {
+  if (currentNumber === '') return;
+  if (previousNumber !== '') {
+    handleEqaulPress();
+  }
+  operand = e.target.innerText;
+  previousNumber = currentNumber;
+  currentNumber = '';
+  updateDisplay();
+}
+
+// CALCULATE
 export function handleEqaulPress() {
-  //   decimalClicked = false;
-  previousNumber = parseInt(previousNumber);
-  currentNumber = parseInt(currentNumber);
+  let resultNumber;
+  const previous = parseFloat(previousNumber);
+  const current = parseFloat(currentNumber);
+  if (isNaN(previous) || isNaN(current)) return;
 
   if (operand === '+') {
-    resultNumber = previousNumber + currentNumber;
+    resultNumber = previous + current;
   }
   if (operand === '-') {
-    resultNumber = previousNumber - currentNumber;
+    resultNumber = previous - current;
   }
   if (operand === '/') {
-    resultNumber = previousNumber / currentNumber;
+    resultNumber = previous / current;
   }
   if (operand === 'x') {
-    resultNumber = previousNumber * currentNumber;
+    resultNumber = previous * current;
   }
 
-  //   previousNumber = resultNumber;
-  display.textContent = resultNumber;
-}
-export function handleDelete() {
-  display.innerText = display.textContent.toString().slice(0, -1);
-}
-export function handleReset() {
-  currentNumber = '';
+  currentNumber = resultNumber;
+  operand = '';
   previousNumber = '';
-  resultNumber = '';
-  operand = undefined;
-  decimalClicked = false;
-  display.textContent = '';
+  updateDisplay();
 }
+
+// UPDATE DISPLAY
+export function updateDisplay() {
+  currentNumberElement.textContent = currentNumber;
+  previousNumberElement.textContent = previousNumber + ` ${operand}`;
+}
+
+handleReset();
 
 numberButtons.forEach(btn => {
   btn.addEventListener('click', handleNumberPress);
@@ -84,5 +88,5 @@ operationButtons.forEach(btn => {
   btn.addEventListener('click', handleOperationPress);
 });
 equalsButton.addEventListener('click', handleEqaulPress);
-deleteButton.addEventListener('click', handleDelete);
 resetButton.addEventListener('click', handleReset);
+deleteButton.addEventListener('click', handleDelete);

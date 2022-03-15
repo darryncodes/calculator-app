@@ -20,20 +20,25 @@
   }
 
   &__screen {
-    min-height: 5rem;
+    min-height: 6rem;
     margin: 1.5rem 0;
     margin-top: 1rem;
     background-color: var(--screen);
+    color: var(--main-text);
     border-radius: 0.75rem;
 
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0.5rem 1.5rem;
   }
 
-  &__display {
-    color: var(--main-text);
+  &__previous {
+    font-size: 1.125rem;
+  }
+  &__current {
+    font-size: 1.875rem;
   }
 
   &__grid {

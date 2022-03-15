@@ -1,9 +1,10 @@
 import {
+  handleReset,
+  handleDelete,
   handleNumberPress,
   handleOperationPress,
   handleEqaulPress,
-  handleDelete,
-  handleReset,
+  updateDisplay,
 } from './modules/calc.js';
 
 import { handleTheme, checkTheme } from './modules/theme.js';
